@@ -1,0 +1,12 @@
+.product-card{
+   padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.available-products{
+    background-color: green;
+}
+
+.unavailable-products{
+    background-color: red !important;
+}

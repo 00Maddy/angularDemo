@@ -1,0 +1,18 @@
+<div style="display: flex;align-items: center;justify-content: space-between;">
+<div  *ngFor="let item of productlist;let i=index">
+    <div class="product-card" [ngSwitch]="(item.deviceType)" >
+        <div style="background-color: aqua;" [ngStyle]="{'background-color': item.color,'color':'white'}" *ngSwitchCase="'iPhone'">
+            <div class="product-property"><label>Name</label>{{item.name}}</div>
+            <div><label>Color</label>{{item.color}}</div>
+            <div><label>Price</label>{{item.price}}</div>
+            <div><label>Discount</label>{{item.discount}}</div>
+            <div style="background-color: green;" [ngClass]="{'unavailable-products':(item.inStock == 0)}"><label>Available</label>{{item.inStock}}</div>
+        </div>
+        <div style="background-color: cadetblue;" *ngSwitchCase="'Airpods'">    
+        <div class="product-property"><label>Name</label>{{item.name}}</div>
+        <div><label>Discount</label>{{item.discount}}</div>
+        <div><label>Available</label>{{item.inStock}}</div>
+        </div>
+    </div>
+</div>  
+</div>
