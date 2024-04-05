@@ -7,13 +7,17 @@ import { FormsModule } from '@angular/forms';
 import { headerComponent } from './header/app.header';
 import { TopheaderComponent } from './header/topheader/topheader.component';
 import { ItemListComponent } from './item-list/item-list.component';
+import { ItemComponent } from './item-list/item/item.component';
+import { FilterComponent } from './item-list/filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     headerComponent,
     TopheaderComponent,
-    ItemListComponent
+    ItemListComponent,
+    ItemComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
