@@ -602,6 +602,10 @@ export class ItemListComponent {
  allproducts = this.productlist.length;
  availbleCount = this.productlist.filter((item) => item.is_in_inventory).length;
  unavailableCount = this.productlist.filter((item) => !item.is_in_inventory).length;
+ Inputvalue:string = 'all';
+ productFilter(value:string): any {
+  this.Inputvalue = value;
+ }
 }
 //foreach
 //filter

@@ -1,5 +1,7 @@
-<demo-filter [filtervalue]="'OutofStock'" [allcount]="allproducts" [availbleproducts]="availbleCount" [unavailbleproducts]="unavailableCount"></demo-filter>
+<demo-filter [filtervalue]="Inputvalue" [allcount]="allproducts" [availbleproducts]="availbleCount" [unavailbleproducts]="unavailableCount" (filterChange)="productFilter($event)"></demo-filter>
 <div style="display: flex;
     flex-wrap: wrap;">
-    <demo-item *ngFor="let productItem of productlist" [item]="productItem"></demo-item>
+<div *ngFor="let productItem of productlist">
+    <demo-item *ngIf="productItem.is_in_inventory.toString() === Inputvalue || Inputvalue === 'all'" [item]="productItem"></demo-item>
+</div>
 </div>
