@@ -1,12 +1,19 @@
-import { Component } from "@angular/core";
+import { Component, viewChild } from "@angular/core";
+import { SearchComponent } from "../search/search.component";
 
 @Component({
-    selector: "app-header",
-    templateUrl:'./header.component.html',
-    styleUrl: './header.component.css'
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.css',
 })
-export class headerComponent{
 
+export class headerComponent {
+  searchItem: string = '';
+  onSearchEmit(event) {
+    console.log(event);
+    this.searchItem = event;
+  }
+  
 }
 
 //create a new ts class and export it

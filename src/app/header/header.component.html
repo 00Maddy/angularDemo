@@ -18,11 +18,8 @@
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </div>
-            <div class="ekart--search--product">
-                <input class="ekart-search-product-input">
-                <button class="btn btn-search">Search</button>
-            </div>
+            <demo-search #searchCom (onSearch)="onSearchEmit($event)"></demo-search>
         </div>
-        <demo-item-list></demo-item-list>
+        <demo-item-list [filterItem]="searchItem"></demo-item-list>
     </div>
 </div>

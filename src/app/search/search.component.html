@@ -1,0 +1,7 @@
+<div class="ekart--search--product">
+    <input #inputbox class="ekart-search-product-input" placeholder="Search for product" />
+    <button class="btn btn-search" (click)="onInput(inputbox.value)">Search</button>
+</div>
+<div class="ekart-search-result-for">
+    <p><strong>Search result for:</strong> {{inputbox.value}}</p>
+</div>

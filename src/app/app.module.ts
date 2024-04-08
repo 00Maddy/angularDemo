@@ -9,6 +9,7 @@ import { TopheaderComponent } from './header/topheader/topheader.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item-list/item/item.component';
 import { FilterComponent } from './item-list/filter/filter.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FilterComponent } from './item-list/filter/filter.component';
     TopheaderComponent,
     ItemListComponent,
     ItemComponent,
-    FilterComponent
+    FilterComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'demo-item-list',
   templateUrl: './item-list.component.html',
   styleUrl: './item-list.component.css',
 })
-export class ItemListComponent {
-  
+export class ItemListComponent{
   productlist = [
     {
       id: 1,
@@ -599,13 +598,20 @@ export class ItemListComponent {
       slug: 'michael-feburary-sk8-hi',
     },
   ];
- allproducts = this.productlist.length;
- availbleCount = this.productlist.filter((item) => item.is_in_inventory).length;
- unavailableCount = this.productlist.filter((item) => !item.is_in_inventory).length;
- Inputvalue:string = 'all';
- productFilter(value:string): any {
-  this.Inputvalue = value;
- }
+  allproducts = this.productlist.length;
+  availbleCount = this.productlist.filter((item) => item.is_in_inventory)
+    .length;
+  unavailableCount = this.productlist.filter((item) => !item.is_in_inventory)
+    .length;
+  Inputvalue: string = 'all';
+  productFilter(value: string): any {
+    this.Inputvalue = value;
+  }
+@Input()
+filterItem: string = '';
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log(this.filterItem);
+  // }
 }
 //foreach
 //filter
