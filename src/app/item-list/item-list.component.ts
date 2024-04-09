@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Product } from '../Modal/Product';
 
 @Component({
   selector: 'demo-item-list',
@@ -6,6 +7,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
   styleUrl: './item-list.component.css',
 })
 export class ItemListComponent{
+  selectedProduct: Product;
   productlist = [
     {
       id: 1,
@@ -608,10 +610,7 @@ export class ItemListComponent{
     this.Inputvalue = value;
   }
 @Input()
-filterItem: string = '';
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   console.log(this.filterItem);
-  // }
+filterItem: string = ''; 
 }
 //foreach
 //filter

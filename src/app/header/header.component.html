@@ -18,8 +18,9 @@
                 <a href="#">About</a>
                 <a href="#">Contact</a>
             </div>
-            <demo-search #searchCom (onSearch)="onSearchEmit($event)"></demo-search>
+            <demo-search (onSearch)="onSearchEmit($event)"></demo-search>
         </div>
-        <demo-item-list [filterItem]="searchItem"></demo-item-list>
+        <demo-item-list #itemlist [filterItem]="searchItem"></demo-item-list>
+        <demo-detailed-view *ngIf="itemlist.selectedProduct != undefined" [viewProduct]="itemlist.selectedProduct"></demo-detailed-view>
     </div>
 </div>

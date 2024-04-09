@@ -10,6 +10,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 import { ItemComponent } from './item-list/item/item.component';
 import { FilterComponent } from './item-list/filter/filter.component';
 import { SearchComponent } from './search/search.component';
+import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchComponent } from './search/search.component';
     ItemListComponent,
     ItemComponent,
     FilterComponent,
-    SearchComponent
+    SearchComponent,
+    DetailedViewComponent
   ],
   imports: [
     BrowserModule,
