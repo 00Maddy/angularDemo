@@ -2,7 +2,8 @@
 <div style="display: flex;
     flex-wrap: wrap;">
 <!-- *ngIf="productItem.is_in_inventory.toString() ===   || Inputvalue === 'all'" -->
-<div *ngFor="let productItem of productlist" (click)="selectedProduct = productItem">
-    <demo-item *ngIf="productItem.name.toLowerCase().includes(filterItem)"  [item]="productItem"></demo-item>
-</div>
+<ng-container *ngFor="let productItem of showAvailableProducts">
+    <demo-item  (click)="selectedProduct = productItem" *ngIf="productItem.name.toLowerCase().includes(filterItem)"  [item]="productItem"><h3 class="brand">Brand::{{productItem.brand}}</h3>
+    <h5 class="cat">Category::{{productItem.category}}</h5></demo-item>
+</ng-container>
 </div>

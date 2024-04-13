@@ -1,4 +1,5 @@
 <div class="ekart--product--item">
+    <ng-content select=".brand"></ng-content>
     <div class="ekart-wishlist-sale-container">
         <div class="ekart--add--to--wishlist">
             <i class="fa fa-heart-o" aria-hidden="true"></i>
@@ -14,4 +15,5 @@
     <div class="ekart--product--name">{{item.name}}</div>
     <div class="ekart--product--category">{{item.gender}} . {{ item.category }} . {{item.brand}}</div>
     <div class="ekart--product--available-colors">{{ item.color }} . Best Seller</div>
+   <ng-content select=".cat"></ng-content>
 </div>

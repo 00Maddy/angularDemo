@@ -6,8 +6,16 @@ import { Product } from '../Modal/Product';
   templateUrl: './item-list.component.html',
   styleUrl: './item-list.component.css',
 })
-export class ItemListComponent{
+export class ItemListComponent implements OnInit {
   selectedProduct: Product;
+  showAvailableProducts: any;
+  ngOnInit() {
+    this.showAvailableProducts = this.productlist.filter(
+      (item) => item.is_in_inventory
+    );
+    console.log(this.showAvailableProducts);
+    
+  }
   productlist = [
     {
       id: 1,
@@ -606,11 +614,12 @@ export class ItemListComponent{
   unavailableCount = this.productlist.filter((item) => !item.is_in_inventory)
     .length;
   Inputvalue: string = 'all';
+
   productFilter(value: string): any {
     this.Inputvalue = value;
   }
-@Input()
-filterItem: string = ''; 
+  @Input()
+  filterItem: string = '';
 }
 //foreach
 //filter

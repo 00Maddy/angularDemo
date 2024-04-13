@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterContentInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Product } from '../Modal/Product';
 
 @Component({
@@ -7,11 +7,20 @@ import { Product } from '../Modal/Product';
   styleUrl: './detailed-view.component.css',
 })
 export class DetailedViewComponent {
+ 
+  counter = 0;
+  tems = [];
   @Input() viewProduct: Product;
-  @Output() close:EventEmitter<string> = new EventEmitter();
-  onClose(){
+  @Output() close: EventEmitter<string> = new EventEmitter();
+
+  
+  curBtn: ElementRef;
+
+  onClose() {
     console.log('close');
     this.close.emit('close');
     // this.viewProduct = undefined;
   }
+
+  next() {}
 }
