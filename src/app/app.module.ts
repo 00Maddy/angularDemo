@@ -11,6 +11,7 @@ import { ItemComponent } from './item-list/item/item.component';
 import { FilterComponent } from './item-list/filter/filter.component';
 import { SearchComponent } from './search/search.component';
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
+import { ContainerComponent } from './container/container.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailedViewComponent } from './detailed-view/detailed-view.component';
     ItemComponent,
     FilterComponent,
     SearchComponent,
-    DetailedViewComponent
+    DetailedViewComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,

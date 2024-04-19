@@ -8,17 +8,20 @@ import { Component, ElementRef, EventEmitter, Output, QueryList, ViewChild, View
 export class SearchComponent {
   @Output()
   onSearch: EventEmitter<string> = new EventEmitter<string>();
-
-  @ViewChildren('productname')  
+  seraarchItem: string[] = []; // pointing @34567 = @45678
+  @ViewChildren('productname')
   productnameInputs: QueryList<ElementRef>;
   onInput(value) {
-    // console.log(value);
+    // let temp = []; // pointing @234567
+    // temp.push(value);
+    // this.seraarchItem = temp;
+    this.seraarchItem.push(value);
+    // console.log(this.seraarchItem);
     // console.log(this.productnameInput.nativeElement);
-    this.productnameInputs.forEach((element)=>{
-      console.log(element.nativeElement.value);
-      
-    })
-    
+    this.productnameInputs.forEach((element) => {
+      // console.log(element.nativeElement.value);
+    });
+
     // this.onSearch.emit(value);
   }
 }

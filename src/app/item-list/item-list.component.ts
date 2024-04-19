@@ -9,6 +9,14 @@ import { Product } from '../Modal/Product';
 export class ItemListComponent implements OnInit {
   selectedProduct: Product;
   showAvailableProducts: any;
+  constructor(){
+    // console.log("Item list");
+    
+    // console.log(this.productlist);
+    // console.log(this.filterItem);
+    
+    
+  }
   ngOnInit() {
     this.showAvailableProducts = this.productlist.filter(
       (item) => item.is_in_inventory
@@ -619,7 +627,7 @@ export class ItemListComponent implements OnInit {
     this.Inputvalue = value;
   }
   @Input()
-  filterItem: string = '';
+  filterItem: string;
 }
 //foreach
 //filter

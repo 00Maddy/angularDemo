@@ -9,8 +9,11 @@ import { SearchComponent } from "../search/search.component";
 
 export class headerComponent {
   searchItem: string = '';
+  constructor(){
+    // console.log('header component constructor called');
+  }
   onSearchEmit(event) {
-    console.log(event);
+    // console.log(event);
     this.searchItem = event;
   }
   

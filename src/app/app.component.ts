@@ -6,7 +6,9 @@ import { Component, SimpleChanges } from '@angular/core';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  constructor(){}
+  constructor(){
+    // console.log('App Component constructor called');
+  }
   title = 'Hello World!';
   isLogin = true;
   isSubmited = false;
@@ -26,11 +28,11 @@ export class AppComponent {
   listofusers = ['mani', 'siva', 'chayan', 'tanggal'];
   onSubmit(type: string): void {
     if (type == 'login') {
-      console.log(this.logininput, 'Submit');
+      // console.log(this.logininput, 'Submit');
       this.logininput.btncolor = 'green';
       this.isSubmited = true;
     } else {
-      console.log(this.signininput, 'Submit');
+      // console.log(this.signininput, 'Submit');
       this.signininput.btncolor = 'yellow';
     }
   }
