@@ -12,6 +12,7 @@ import { FilterComponent } from './item-list/filter/filter.component';
 import { SearchComponent } from './search/search.component';
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 import { ContainerComponent } from './container/container.component';
+import { setBorder } from './Directives/setBorder.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ContainerComponent } from './container/container.component';
     FilterComponent,
     SearchComponent,
     DetailedViewComponent,
-    ContainerComponent
+    ContainerComponent,
+    setBorder
   ],
   imports: [
     BrowserModule,
