@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, QueryList, ViewChild, ViewChildren, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'demo-search',
