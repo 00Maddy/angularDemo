@@ -1,0 +1,10 @@
+.strong-class{
+    border: 3px solid black;
+    border-radius: 10px;
+}
+button {
+    padding: 5.5px 28px;
+    background-color: #28282B;
+    margin-left: -5px;
+    color: #fff;
+}

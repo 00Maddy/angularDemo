@@ -1,10 +1,12 @@
-import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges,} from '@angular/core';
+import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation,} from '@angular/core';
 
 @Component({
   selector: 'demo-container',
   templateUrl: './container.component.html',
   styleUrl: './container.component.css',
+  encapsulation: ViewEncapsulation.None
 })
+// emulated,none,shawdowdom
 export class ContainerComponent implements OnChanges, OnInit, DoCheck {
   @Input() title: string[];
   constructor() {

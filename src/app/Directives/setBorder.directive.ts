@@ -21,14 +21,27 @@ export class setBorder implements OnInit {
   }
 
   @HostListener('mouseover') onMouseOver() {
-    console.log('OnMouseOver');
-    this.renderer.setStyle(
-      this.element.nativeElement,
-      'border',
-      '5px solid black'
-    );
-    this.renderer.setStyle(this.element.nativeElement, 'border-radius', '10px');
-    this.color = 'burlywood';
+    // console.log('OnMouseOver');
+    // this.renderer.setStyle(
+    //   this.element.nativeElement,
+    //   'border',
+    //   '5px solid black'
+    // );
+    // this.renderer.setStyle(this.element.nativeElement, 'border-radius', '10px');
+    // this.color = 'burlywood';
+    console.log(this.element.nativeElement);
+    
+    if(this.element.nativeElement){
+      console.log('OnMouseOver');
+      this.renderer.setStyle(
+        this.element.nativeElement,
+        'border',
+        '5px solid black'
+      );
+      this.renderer.setStyle(this.element.nativeElement, 'border-radius', '10px');
+      this.color = 'burlywood';
+      this.renderer.removeChild(this.element.nativeElement, 'input', true);
+    }
   }
 
   @HostListener('mouseout') onmouseout() {
