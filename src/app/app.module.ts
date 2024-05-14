@@ -13,6 +13,7 @@ import { SearchComponent } from './search/search.component';
 import { DetailedViewComponent } from './detailed-view/detailed-view.component';
 import { ContainerComponent } from './container/container.component';
 import { setBorder } from './Directives/setBorder.directive';
+import { LoginService } from './service/loginService.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { setBorder } from './Directives/setBorder.directive';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,8 @@
-<div setBorder class="ekart--search--product">
+<div class="ekart--search--product">
     <input #productname class="ekart-search-product-input" placeholder="Search for product" />
     <button (click)="onInput(productname.value)">Search</button>
+    <button style="margin-left: 20px;" (click)="loginservice.onlogin('search')">LOGIN</button>
+    <h3>{{loginservice.loginCounter}}</h3>
 </div>
 <div class="ekart-search-result-for">
     <!-- <p><strong>Search result for:</strong> {{productname.value}}</p> -->

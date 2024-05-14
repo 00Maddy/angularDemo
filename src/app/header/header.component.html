@@ -9,7 +9,8 @@
             <a href="#">Help</a>
             <a href="#">Exchange & Returns</a>
             <a href="#">Order Tracker</a>
-            <a href="#">SignUp / Login</a>
+            <button (click)="loginservice.onlogin('header')">Login</button>
+            <h3>{{loginservice.loginCounter}}</h3>
         </div>
         <div class="ekart--bottom--bar">
             <div class="ekart-menu">
