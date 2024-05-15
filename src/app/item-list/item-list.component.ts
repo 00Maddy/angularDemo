@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Product } from '../Modal/Product';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'demo-item-list',
@@ -9,20 +10,28 @@ import { Product } from '../Modal/Product';
 export class ItemListComponent implements OnInit {
   selectedProduct: Product;
   showAvailableProducts: any;
-  constructor(){
-    // console.log("Item list");
-    
-    // console.log(this.productlist);
-    // console.log(this.filterItem);
-    
-    
-  }
+  constructor() {}
+
+  sendProduct = new Observable((observer) => {
+    let index = 0;
+    const intervalId = setInterval(() => {
+      if (index < this.productlist.length) {
+        //  observer.error(new Error('Something went wrong'));
+        observer.next(this.productlist[index]);
+       
+        index++;
+      } else {
+        clearInterval(intervalId); // Stop the interval when all products have been emitted
+        observer.complete(); // Notify observers that the stream is complete
+      }
+    }, 1000);
+  });
+  subscribedProductList: Product[] = [];
   ngOnInit() {
     this.showAvailableProducts = this.productlist.filter(
       (item) => item.is_in_inventory
     );
     console.log(this.showAvailableProducts);
-    
   }
   productlist = [
     {
@@ -622,6 +631,18 @@ export class ItemListComponent implements OnInit {
   unavailableCount = this.productlist.filter((item) => !item.is_in_inventory)
     .length;
   Inputvalue: string = 'all';
+
+  subscribeProduct() {
+    this.sendProduct.subscribe({
+      next: (response: Product) => {
+        this.subscribedProductList.push(response);
+      },
+      error: (error) => console.log(error),
+      complete: () => {
+        console.log('completed');
+      }
+    });
+  }
 
   productFilter(value: string): any {
     this.Inputvalue = value;
